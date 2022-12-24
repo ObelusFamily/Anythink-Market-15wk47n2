@@ -10,6 +10,7 @@ class User(RWModel):
     email: str
     bio: str = ""
     image: Optional[str] = None
+    is_verified: bool = false
 
 
 class UserInDB(IDModelMixin, DateTimeModelMixin, User):
@@ -21,4 +22,4 @@ class UserInDB(IDModelMixin, DateTimeModelMixin, User):
 
     def change_password(self, password: str) -> None:
         self.salt = security.generate_salt()
-        self.hashed_password = security.get_password_hash(self.salt + password)
+        self.hashed_password = security.get_password_hash(self.salt + password) 
