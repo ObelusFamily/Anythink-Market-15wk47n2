@@ -69,7 +69,6 @@ async def update_current_user(
             email=user.email,
             bio=user.bio,
             image=user.image,
-            token=token,
-            isVerified=user.isVerified
+            token=token
         ),
     )
